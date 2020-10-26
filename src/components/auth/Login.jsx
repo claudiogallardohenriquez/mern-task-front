@@ -57,11 +57,12 @@ const Login = (props) => {
                 <div className={`alerta ${alerta.categoria}`}>{alerta.msg}</div>
             ) : null}
             <div className="contenedor-form sombra-dark">
-                <h1>Iniciar Sesión</h1>
+                <h1 data-cy="titulo">Iniciar Sesión</h1>
                 <form onSubmit={onSubmit}>
-                    <div className="campo-form">
+                    <div className="campo-form" data-cy="form-login">
                         <label htmlFor="email">Email</label>
                         <input
+                            data-cy="email-input"
                             type="email"
                             id="email"
                             name="email"
@@ -73,6 +74,7 @@ const Login = (props) => {
                     <div className="campo-form">
                         <label htmlFor="password">Password</label>
                         <input
+                            data-cy="password-input"
                             type="password"
                             id="password"
                             name="password"
@@ -83,13 +85,14 @@ const Login = (props) => {
                     </div>
                     <div className="campo-form">
                         <input
+                            data-cy="submit-login"
                             type="submit"
                             className="btn btn-primario btn-block"
                             value="Iniciar Sesión"
                         />
                     </div>
                 </form>
-                <Link to={'/nueva-cuenta'} className="enlace-cuenta">
+                <Link data-cy="nueva-cuenta" to={'/nueva-cuenta'} className="enlace-cuenta">
                     Obtener cuenta
                 </Link>
             </div>
